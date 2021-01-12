@@ -4,6 +4,8 @@ public class ComplexNumber {
 
 	private double real;
 	private double imaginary;
+	private double[] imaginaryArray;
+	
 	
 	public ComplexNumber() {
 		this.real = 0.0;
@@ -13,6 +15,11 @@ public class ComplexNumber {
 	public ComplexNumber(double real, double imag) {
 		this.real = real;
 		this.imaginary = imag;
+	}
+	
+	public ComplexNumber(double real, double[] imag) {
+		this.real = real;
+		this.imaginaryArray = imag;
 	}
 	
 	public ComplexNumber(ComplexNumber copy) {
@@ -48,6 +55,16 @@ public class ComplexNumber {
 		return this.imaginary;
 	}
 
+	
+	/**
+	 * Getter method for imaginaryArray component.
+	 * 
+	 * @return Imaginary array component of complex number
+	 */
+	public double[] getImaginaryArray() {
+		return imaginaryArray;
+	}
+	
 	public ComplexNumber add(ComplexNumber a, ComplexNumber b) {
 		ComplexNumber copy = new ComplexNumber();
 		copy.real = a.real + b.real;

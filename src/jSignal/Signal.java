@@ -1,5 +1,6 @@
 package jSignal;
 
+import jMath.Periodicity;
 
 /**
  * Abstract class for creating a signal. A signal is described by an amplitude (magnitude of the crest),

@@ -1,4 +1,4 @@
-package jSignal;
+package jMath;
 
 public enum Periodicity {
 	PERIODIC,

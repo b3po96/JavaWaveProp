@@ -1,5 +1,7 @@
 package jSignal;
 
+import jMath.Periodicity;
+
 /**
  * Designates important functions for easy access
  * 
