@@ -5,6 +5,11 @@ public class ComplexNumber {
 	private double real;
 	private double imaginary;
 	
+	public ComplexNumber() {
+		this.real = 0.0;
+		this.imaginary = 0.0;
+	}
+	
 	public ComplexNumber(double real, double imag) {
 		this.real = real;
 		this.imaginary = imag;
@@ -44,17 +49,34 @@ public class ComplexNumber {
 	}
 
 	public ComplexNumber add(ComplexNumber a, ComplexNumber b) {
-		ComplexNumber copy = new ComplexNumber(a);
-		copy.real = copy.real + b.real;
-		copy.imaginary = copy.imaginary + b.imaginary;
+		ComplexNumber copy = new ComplexNumber();
+		copy.real = a.real + b.real;
+		copy.imaginary = a.imaginary + b.imaginary;
 		return copy;
 	}
 	
 	public ComplexNumber subtract(ComplexNumber a, ComplexNumber b) {
-		ComplexNumber copy = new ComplexNumber(a);
-		copy.real = copy.real - b.real;
-		copy.imaginary = copy.imaginary - b.imaginary;
+		ComplexNumber copy = new ComplexNumber();
+		copy.real = a.real - b.real;
+		copy.imaginary = a.imaginary - b.imaginary;
 		return copy;
 	}
 	
+	public ComplexNumber multiply(ComplexNumber a, ComplexNumber b) {
+		ComplexNumber copy = new ComplexNumber();
+		copy.real = (a.real * b.real) - (a.imaginary * b.imaginary);
+		copy.imaginary = (a.real * b.imaginary) - (a.imaginary * b.real);
+		return copy;
+	}
+	
+	public ComplexNumber divide(ComplexNumber a, ComplexNumber b) {
+		ComplexNumber copy = new ComplexNumber();
+		copy.real = ((a.real * b.real) + (a.imaginary * b.imaginary))/(Math.pow(b.real, 2) + Math.pow(b.imaginary, 2));
+		copy.imaginary = ((a.imaginary * b.real) + (a.real * b.imaginary))/(Math.pow(b.real, 2) + Math.pow(b.imaginary, 2));
+		return copy;
+	}
+	
+	public double abs() {
+		return (this.real * this.real + this.imaginary * this.imaginary);
+	}
 }
